@@ -1,0 +1,31 @@
+<?php
+
+namespace Acme\UserBundle\Document;
+
+
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+
+/**
+ * @MongoDB\Document
+ */
+class Group
+{
+    /**
+     * @MongoDB\Id(strategy="auto")
+     */
+    protected $id;
+     /**
+     * @MongoDB\ReferenceMany(targetDocument="User")
+     */
+    protected $user;
+
+    /**
+     * Get id
+     *
+     * @return id $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

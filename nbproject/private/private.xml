@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Repository/GroupsRepository.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Tests/Controller/DefaultControllerTest.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Document/Message.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/DependencyInjection/StarsBnetcomExtension.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Document/GroupDis.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Acme/UserBundle/Controller/UserController.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/AnsiGhassenBundle.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Controller/GroupDisController.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Resources/views/Recherche/recherche.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Messenger/node/app.js</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Resources/views/Message/phone.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Resources/views/GroupDis/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Messenger/web/js/main.js</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Form/GroupDisType.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Resources/config/routing.yml</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Resources/views/GroupDis/edit.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Resources/views/Recherche/recherchegroups.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Twig/Extension/DemoExtension.php</file>
+            <file>file:/C:/xampp/htdocs/Messenger/web/js/apppp.js</file>
+            <file>file:/C:/xampp/htdocs/Messenger/src/Ansi/GhassenBundle/Form/RechercheType.php</file>
+        </group>
+    </open-files>
+</project-private>

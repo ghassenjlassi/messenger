@@ -1,0 +1,150 @@
+<?php
+// src/Acme/UserBundle/Document/User.php
+
+namespace Acme\UserBundle\Document;
+
+use FOS\UserBundle\Document\User as BaseUser;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+
+
+/**
+ * @MongoDB\Document(collection="User")
+ */
+class User extends BaseUser 
+{
+    /**
+     * @MongoDB\Id(strategy="auto") 
+     */
+    protected $id;
+    
+    /**
+     * @MongoDB\ReferenceMany(targetDocument="GroupDis")
+     */
+    protected $groupDis;
+    /**
+   *
+   * @var Acme\UserBundle\Document\User
+   * @MongoDB\ReferenceMany(targetDocument="User")
+   */
+  protected $friends; 
+  
+  /**
+   *
+   * @var string
+   * @MongoDB\String
+   */
+  protected $photo;
+   /**
+     * @MongoDB\ReferenceMany(targetDocument="Message")
+     */
+  protected  $message; 
+  
+    public function __construct()
+    {   
+        parent::__construct();
+        $this->groupDis = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->friends = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->message = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return id $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add groupDi
+     *
+     * @param Acme\UserBundle\Document\GroupDis $groupDi
+     */
+    public function addGroupDi(\Acme\UserBundle\Document\GroupDis $groupDi)
+    {
+        $this->groupDis[] = $groupDi;
+    }
+
+    /**
+     * Remove groupDi
+     *
+     * @param Acme\UserBundle\Document\GroupDis $groupDi
+     */
+    public function removeGroupDi(\Acme\UserBundle\Document\GroupDis $groupDi)
+    {
+        $this->groupDis->removeElement($groupDi);
+    }
+
+    /**
+     * Get groupDis
+     *
+     * @return \Doctrine\Common\Collections\Collection $groupDis
+     */
+    public function getGroupDis()
+    {
+        return $this->groupDis;
+    }
+
+    /**
+     * Add friend
+     *
+     * @param Acme\UserBundle\Document\User $friend
+     */
+    public function addFriend(\Acme\UserBundle\Document\User $friend)
+    {
+        $this->friends[] = $friend;
+    }
+
+    /**
+     * Remove friend
+     *
+     * @param Acme\UserBundle\Document\User $friend
+     */
+    public function removeFriend(\Acme\UserBundle\Document\User $friend)
+    {
+        $this->friends->removeElement($friend);
+    }
+
+    /**
+     * Get friends
+     *
+     * @return \Doctrine\Common\Collections\Collection $friends
+     */
+    public function getFriends()
+    {
+        return $this->friends;
+    }
+
+
+    /**
+     * Add message
+     *
+     * @param Acme\UserBundle\Document\Message $message
+     */
+    public function addMessage(\Acme\UserBundle\Document\Message $message)
+    {
+        $this->message[] = $message;
+    }
+
+    /**
+     * Remove message
+     *
+     * @param Acme\UserBundle\Document\Message $message
+     */
+    public function removeMessage(\Acme\UserBundle\Document\Message $message)
+    {
+        $this->message->removeElement($message);
+    }
+
+    /**
+     * Get message
+     *
+     * @return \Doctrine\Common\Collections\Collection $message
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+}

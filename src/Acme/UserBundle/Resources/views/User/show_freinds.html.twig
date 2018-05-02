@@ -1,0 +1,25 @@
+{% extends 'Ansi\GhassenBundle::layout.html.twig' %}  
+
+{% block bd %}
+
+         <div class="tab-pane active" id="control-sidebar-home-tab">
+                        <h3 class="control-sidebar-heading">List des Amis</h3>
+                  {% for entity in friends %}
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a>
+                                    <img src="{{ asset(entity.photo) }}" />
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">{{ entity.username }}</h4>
+                                        
+                                    </div>
+                                </a>
+                            </li>              
+                        </ul><!-- /.control-sidebar-menu -->
+{% endfor %}
+                        
+                    </div><!-- /.tab-pane -->
+                    
+           
+ 
+{% endblock %}  

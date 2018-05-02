@@ -1,0 +1,5 @@
+services:
+#    ansi_ghassen.example:
+#        class: Ansi\GhassenBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+     

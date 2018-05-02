@@ -1,0 +1,30 @@
+groupDis:
+    pattern:  /
+    defaults: { _controller: "AnsiGhassenBundle:GroupDis:index" }
+rechercheGroupes:
+    pattern:  /recherchegroupe
+    defaults: { _controller: AnsiGhassenBundle:GroupDis:rechercheGroup }
+groupDis_new:
+    pattern:  /new
+    defaults: { _controller: "AnsiGhassenBundle:GroupDis:new" }
+msgroupDis_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AnsiGhassenBundle:Message:showmsgroup" }
+GroupDis_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AnsiGhassenBundle:GroupDis:edit" }
+GroupDis_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AnsiGhassenBundle:GroupDis:update" } 
+convgroupPDF:
+    pattern:  /Pdf/{id}
+    defaults: { _controller: "AnsiGhassenBundle:Message:convgroupPDF" }
+    
+groupDis_create:
+    pattern:  /create
+    defaults: { _controller: "AnsiGhassenBundle:GroupDis:create" }
+    requirements: { _method: post }
+ 
+deletegroup:
+    pattern:  /delete/{id}
+    defaults: { _controller: "AnsiGhassenBundle:GroupDis:deletegroup" }

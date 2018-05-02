@@ -1,0 +1,27 @@
+{% extends "::layout/layout.html.twig" %}   
+
+{% block body -%}
+    <h1>Users Groups</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in groups %}
+                <tr>
+                  
+                   <td><a href="{{ path('groupDis_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                   
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+

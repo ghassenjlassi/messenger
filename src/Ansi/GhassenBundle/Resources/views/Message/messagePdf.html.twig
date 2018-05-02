@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Conversation</title>
+
+        
+    </head>
+    <body>
+        <h1>Conversations</h1>
+        <div class="span9">
+ {% for message in message%}
+                    <div id="messages">
+                        <div class="message" id="msgtpl">
+                       <img src="{{ asset(message.sender.photo) }}"   width="50" height="50">
+                           <div class="info">
+                               <h4>{{message.sender.username }}</h4>
+                            
+                               <p>{{message.Message}}</p>
+                               <span class="date"> {% if message.date %}{{ message.date|date('Y-m-d\\TH:i:sP') }} {% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    {% endfor %}
+
+        </div>
+        
+      
+    </body>
+</html>

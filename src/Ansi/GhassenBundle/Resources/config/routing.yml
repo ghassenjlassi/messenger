@@ -1,0 +1,11 @@
+ansi_ghassen_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AnsiGhassenBundle:Default:index }
+    
+ansi_ghassen_message:
+    resource: routing/message.yml
+    prefix: /message
+ansi_ghassen_groupDid:
+    resource: routing/groupDis.yml
+    prefix: /groupDis
+    

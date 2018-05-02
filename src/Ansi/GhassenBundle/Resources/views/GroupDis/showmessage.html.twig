@@ -1,0 +1,65 @@
+{% extends 'Ansi\GhassenBundle::layout.html.twig' %}
+
+{% block showconv %}
+
+
+
+ <div>
+<!---------------------------------------------------------- DIRECT CHAT -------------------------------------------------------------------------------->
+                  <div class="box box-warning direct-chat direct-chat-warning">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">List des messages</h3>
+                    
+                    </div><!-- /.box-header -->
+
+<div class="box-body" >
+      <!-- Conversations are loaded here -->
+                      <div class="direct-chat-messages" id="chatgroup" >
+                          <div data-clientgroup="{{idgroup}}" id="clientgroup"></div>
+    {% for entity in  mesgrps %}
+         {%if entity.sender.id==app.user.id %}  
+                     <div class="direct-chat-msg" data-username="{{ entity.sender.username }}" data-photo="{{ entity.sender.photo }}" data-id="{{ entity.sender.id }}"id="param">
+                          <div class='direct-chat-info clearfix'>
+                            <span class='direct-chat-name pull-left'>{{entity.sender.username }}</span>
+                            <span class='direct-chat-timestamp pull-right'>{% if entity.date %}{{ entity.date|date('Y-m-d\\TH:i:sP') }} {% endif %}</span>
+                          </div><!-- /.direct-chat-info -->
+                          <img class="direct-chat-img" src="{{ asset(entity.sender.photo) }}"  alt="message user image" /><!-- /.direct-chat-img -->
+                          <div class="direct-chat-text">
+                           {{entity.Message}}
+                          </div><!-- /.direct-chat-text -->
+                        </div><!-- /.direct-chat-msg -->
+                        {%else %}  
+                
+                        <!-- Message to the right -->
+                        <div class="direct-chat-msg right">
+                          <div class='direct-chat-info clearfix'>
+                            <span class='direct-chat-name pull-right'>{{entity.sender.username }}</span>
+                            <span class='direct-chat-timestamp pull-left'>{% if entity.date %}{{ entity.date|date('Y-m-d\\TH:i:sP') }} {% endif %}</span>
+                          </div><!-- /.direct-chat-info -->
+                          <img class="direct-chat-img" src="{{ asset(entity.sender.photo) }}"  alt="message user image" /><!-- /.direct-chat-img -->
+                          <div class="direct-chat-text">
+                            {{entity.Message}}
+                          </div><!-- /.direct-chat-text -->
+                        </div><!-- /.direct-chat-msg -->
+                        
+           <!-- Message. Default to the left -->
+                        
+                      {%endif %} 
+                  {% endfor %}
+                  <section id="resultatgroup"></section>
+                   </div><!--/.direct-chat-messages-->
+           <div class="box-footer">
+                      <form id="formgroup">
+                        <div class="input-group">
+                          <input type="text" name="messagegroup" id="messagegroup" placeholder="Type Message ..." style="width:600px; height:30px;" />
+                      </div>
+                      </form>
+                    </div><!-- /.box-footer--> 
+                    
+                   
+                   
+                    
+ </div><!-- /.box-footer-->
+                  </div><!--/.direct-chat -->
+                </div>
+{% endblock %}

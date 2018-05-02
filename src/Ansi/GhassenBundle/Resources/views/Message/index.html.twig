@@ -1,0 +1,73 @@
+{% extends 'Ansi\GhassenBundle::layout.html.twig' %}
+
+{% block conversations %}
+    
+  <div class="box" > 		  
+		
+                <div class="box-header with-border">
+                   
+                  {% render(controller('AnsiGhassenBundle:Message:recherche')) %}
+                     
+                </div><!-- /.box-header -->
+                <div class="box-body">
+     <div class="col-lg-3 col-xs-6">                
+		{% if messages|length != 0 %}
+                    <ul class="thumbnails">
+                {% for message in messages %}
+                    <li class="span3"  >
+
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                
+                    {%if message.Receiver.id==app.user.id %} 
+                        <div class="inner">
+                     <img src="{{ asset(message.sender.photo) }}"   width="50" height="50" class="img-circle" >
+                      <p>{{message.sender.username }}</p>
+                       </div>
+               
+                <a href="{{ path('show_Messages', { 'id': message.sender.id }) }}" class="small-box-footer" >
+                  Ouvrir <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                   <a href="{{ path('supConversation', { 'id': message.sender.id }) }}" class="small-box-footer" >
+                  supprimer  <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                  	<a  href="{{ path('coversationPdf', { 'id': message.sender.id }) }}" target="_blank" class="small-box-footer">
+                  Télécharger  <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                        {% else %}
+                              <div class="inner">
+                             <img src="{{ asset(message.receiver.photo) }}"   width="50" height="50" class="img-circle" > 
+                             <p>{{message.receiver.username }}</p>
+                             </div>
+                           <a href="{{ path('show_Messages', { 'id': message.Receiver.id }) }}" class="small-box-footer" >
+                  Ouvrir <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                   <a href="{{ path('supConversation', { 'id': message.Receiver.id }) }}" class="small-box-footer" >
+                  Supprimer  <i class="fa fa-arrow-circle-right"></i>
+                </a>
+				<a  href="{{ path('coversationPdf', { 'id': message.Receiver.id }) }}" target="_blank" class="small-box-footer">
+                  Télécharger  <i class="fa fa-arrow-circle-right"></i>
+                </a>
+                            {% endif %}
+                      
+                </div>
+               
+               
+             
+                         
+                    </li>
+                    {% endfor %}
+                </ul>
+               
+                  <div class="navigation">
+                    {{ knp_pagination_render(messages) }}
+                </div>  
+          
+            {% else %}
+                Aucune Conversations
+            {% endif %}		  
+           </div>        
+                </div><!-- ./box-body -->
+                 
+    </div>     
+{% endblock %}  

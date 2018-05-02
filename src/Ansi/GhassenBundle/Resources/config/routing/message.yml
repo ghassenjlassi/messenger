@@ -1,0 +1,37 @@
+message:
+    pattern:  /
+    defaults: { _controller: "AnsiGhassenBundle:Message:index" }
+    requirements: { _method: get }
+
+coversationPdf:
+    pattern:  /Pdf/{id}
+    defaults: { _controller: "AnsiGhassenBundle:Message:conversationPDF" }
+
+
+rechercheMessages:
+    pattern:  /recherche
+    defaults: { _controller: AnsiGhassenBundle:Message:rechercheTraitement }
+#Lastmsg:
+    #pattern:  /notif
+    #defaults: { _controller: "AnsiGhassenBundle:Message:Lastmsg" }   
+supConversation:
+    pattern:  /{id}
+    defaults: { _controller: "AnsiGhassenBundle:Message:delete" }  
+    
+show_Messages:
+    pattern:  /{id}/show
+    defaults: { _controller: AnsiGhassenBundle:Message:show }
+    
+show_phone:
+    pattern:  /{id}/phon_call
+    defaults: { _controller: AnsiGhassenBundle:Message:call }
+    
+message_last:
+    pattern:  /
+    defaults: { _controller: AnsiGhassenBundle:Message:lastmsg }
+    
+
+ 
+
+    
+  

@@ -1,0 +1,12 @@
+user:
+    pattern: /
+    defaults: { _controller: "AcmeUserBundle:User:index" }
+    
+rechercheFriends:
+    pattern:  /recherchefriends
+    defaults: { _controller: AcmeUserBundle:User:rechercheFriends }
+
+user_getGroups:
+    pattern: /Groups
+    defaults: { _controller: "AcmeUserBundle:User:getGroups" } 
+    

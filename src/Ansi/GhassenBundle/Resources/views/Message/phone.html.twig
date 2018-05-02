@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/plain" >
+        <title>WEB PHONE CALL </title>
+
+
+        <script type="text/javascript">
+
+            function click2call() {
+
+                document.getElementById('click2call').innerHTML = "<iframe id=\"ifrclick2call\" src class=\"click2call\" frameborder=\"0\"  width=\"550\" height=\"398\"  scrolling=\"no\" ></iframe>";
+                var urlSolutions = "http://www.doddlephone.com/widget/click2call.html?sipserver=192.168.1.101&proxy=PROXY&stun=STUN&username=user2&password=101&callto=PHONETOCALL&auto=yes";
+                document.getElementById('ifrclick2call').src = urlSolutions;
+
+                return;
+            }
+
+        </script>
+
+
+    </head>
+
+
+
+    <body>
+        <div id="linkedphone">
+
+            <p>
+            <div id="click2call">
+                <img  align="middle" onclick="javascript: click2call();"  border="0" src="{{ asset('bundles/AnsiGhassen/images/call.jpg') }}" width="80" height="90" alt="Call Me" title="Call Me" />
+                <a href="javascript: click2call();"><font size="5"  color="#003399"><b>Start your Call</b></font></a>
+            </div>
+
+        </div>
+
+    </body>
+</html>
+
